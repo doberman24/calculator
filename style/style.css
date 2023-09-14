@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Digital-7';
+    src: url('../fonts/digital-7.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+.operation,
+.percentage {
+    color: #0000b6;
+    border: solid 5px blue;
+    background: linear-gradient(90deg, #fff 20%, #e2e5fc);
+}
+.but span {
+    position: relative;
+    font-size: 100px;
+    top: -17px;
+    height: 86px;
+}
+
+.num {
+    color: #4d4d4d;
+    border: solid 5px gray;
+}
+
+.reset {
+    font-weight: 800;
+    color: #bd0000;
+    border: solid 7px red;
+    background: linear-gradient(90deg, #fff 20%, #fce2e2);
+}
+
+.but.backspace {
+    order: 1;
+    color: #4b4646;
+    border: solid 5px gray;
+    font-size: 60px;
+    background-color: #e9e9e9;
+}
+.sqrt {order: 2;}
+.div {order: 3;}
+.num-7 {order: 4;}
+.num-8 {order: 5;}
+.num-9 {order: 6;}
+.mul {order: 7;}
+.num-4 {order: 8;}
+.num-5 {order: 9;}
+.num-6 {order: 10;}
+.sub {order: 11;}
+.num-1 {order: 12;}
+.num-2 {order: 13;}
+.num-3 {order: 14;}
+.add {order: 15;}
+.num-0 {order: 16;}
+.float {order: 17;}
+.percentage {order: 18;}
+.result {
+    order: 19;
+    color: #005a00;
+    border: solid 5px #008000;
+    background: linear-gradient(90deg, #fff 20%, #cee6ce);
+}
+
+.calc-page {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/back_light.jpg) no-repeat;
+    background-size: cover;
+}
+
+.display {
+    height: 80px;
+    width: 1000px;
+    text-align: end;
+}
+.operator {
+    width: 60px;
+    height: 120px;
+    text-align: center;
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #fff 20%, #cfcfcf);
+    border-radius: 40px;
+    border: grey 15px solid;
+    gap: 40px;
+    width: 1200px;
+    height: 900px;
+}
+
+.main-display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Digital-7', Courier, monospace;
+    font-size: 100px;
+    background: linear-gradient(90deg, #ecfdff 20%, #bfedff);
+    border-radius: 20px;
+    border: grey 8px solid;
+    width: 1060px;
+    height: 120px;
+}
+
+.separator {
+    height: 80px;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+    width: 230px;
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.but:hover {
+    box-shadow: 0 0 15px 5px #cacaca;
+}
+.but:active,
+.num_active {
+    box-shadow: inset 0 0 5px 1px #6d6d6d;
+    background-color: #e4e4e4;
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+    .calc-page {
+        background-size: 100vw 100vh;
+    }
+    .calc {
+        width: 308px;
+        height: 580px;
+        border-width: 5px;
+        border-radius: 15px;
+        gap: 20px;
+    }
+    .main-display {
+        width: 290px;
+        height: 50px;
+        border-width: 3px;
+        font-size: 30px;
+        border-radius: 10px;
+    }
+    .operator {
+        height: 24px;
+    }
+    .display {
+        height: 24px;
+        width: 1000px;
+    }
+    .separator {
+        height: 24px;
+    }
+    .keyboard {
+        gap: 15px;
+    }
+    .but {
+        font-size: 40px;
+        width: 50px;
+        height: 70px;
+        border-radius: 10px;
+    }
+    .but span {
+        position: relative;
+        font-size: 60px;
+        top: -20px;
+        height: 30px;
+    }
+    .but.backspace {
+        font-size: 20px;
+    }
+    .num,
+    .operation,
+    .percentage,
+    .result,
+    .but.backspace {
+        border-width: 2px;
+    }
+    .reset {
+        border-width: 4px;
+        width: 48px;
+        height: 66px;
+    }
+    
+}
+
+@media screen and (min-width: 650px) and (max-width: 900px) {
+    .calc-page {
+        background-size: 100vw 100vh;
+    }
+    .calc {
+        height: 308px;
+        width: 720px;
+        border-width: 5px;
+        border-radius: 15px;
+        gap: 5px;
+    }
+    .main-display {
+        width: 650px;
+        height: 40px;
+        border-width: 3px;
+        font-size: 35px;
+        border-radius: 10px;
+    }
+    .operator {
+        height: 24px;
+    }
+    .display {
+        height: 24px;
+        width: 640px;
+    }
+    .separator {
+        height: 24px;
+    }
+    .keyboard {
+        gap: 10px;
+    }
+    .but {
+        font-size: 30px;
+        width: 150px;
+        height: 35px;
+        border-radius: 10px;
+    }
+    .but span {
+        position: relative;
+        font-size: 40px;
+        top: -9px;
+        height: 30px;
+    }
+    .but.backspace {
+        font-size: 20px;
+    }
+    .num,
+    .operation,
+    .percentage,
+    .result,
+    .but.backspace {
+        border-width: 2px;
+    }
+    .reset {
+        border-width: 4px;
+        width: 148px;
+        height: 33px;
+    }
+    
+}
