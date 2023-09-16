@@ -15,6 +15,7 @@ body {
     border: solid 5px blue;
     background: linear-gradient(90deg, #fff 20%, #e2e5fc);
 }
+
 .but span {
     position: relative;
     font-size: 100px;
@@ -91,13 +92,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background: linear-gradient(45deg, #fff 20%, #cfcfcf);
     border-radius: 40px;
     border: grey 15px solid;
-    gap: 40px;
+    /* gap: 20px; */
     width: 1200px;
     height: 900px;
+}
+
+.theme {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    align-self: start;
+    left: 70px;
+    background: url(../img/theme_light.png) no-repeat center;
+    background-size: 60px 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px;
+}
+.theme:hover {
+    box-shadow: 0 0 10px 5px #cacaca;
+}
+.theme:active {
+    box-shadow: inset 0 0 5px 1px #6d6d6d;
 }
 
 .main-display {
@@ -111,6 +131,7 @@ body {
     border: grey 8px solid;
     width: 1060px;
     height: 120px;
+    margin-bottom: 30px;
 }
 
 .separator {
@@ -142,19 +163,105 @@ body {
 .but:active,
 .num_active {
     box-shadow: inset 0 0 5px 1px #6d6d6d;
-    background-color: #e4e4e4;
+    background: #e4e4e4;
+}
+
+/* Темная тема */
+.dark.calc-page {
+    background: url(../img/back_dark.jpg) no-repeat;
+}
+
+.dark .theme {
+    background: url(../img/theme_dark.png) no-repeat center;
+    background-size: 60px 60px;
+}
+.dark .theme:hover {
+    box-shadow: 0 0 15px 5px #555555;
+}
+.dark .theme:active {
+    box-shadow: inset 0 0 5px 1px #a0a0a0;
+}
+
+.dark .calc {
+    background: linear-gradient(45deg, #202020 20%, #424242);
+    border-color: #a5a5a5;
+}
+
+.dark .main-display {
+    background: linear-gradient(90deg, #092a2e 20%, #096386);
+    border-color: #c7c7c7;
+    color: #e6e6e6;
+}
+
+.dark .num {
+    color: #d4d4d4;
+    border-color: #b6b6b6;
+    background-color: #161616;
+}
+
+.dark .reset {
+    color: #f59797;
+    border-color: #d63131;
+    background: linear-gradient(90deg, #161616 20%, #360000);
+}
+
+.dark .operation,
+.dark .percentage {
+    color: #a6a6ff;
+    border-color: #4a4af0;
+    background: linear-gradient(90deg, #161616 20%, #000738);
+}
+
+.dark .result {
+    color: #6bd46b;
+    border-color: #5ff35f;
+    background: linear-gradient(90deg, #161616 20%, #001d00);
+}
+
+.dark .backspace {
+    color: #dfcccc;
+    border-color: #b6b6b6;
+    background-color: #383838;
+}
+
+.dark .but:hover {
+    box-shadow: 0 0 15px 5px #5c5c5c;
+}
+.dark .but:active,
+.dark .num_active {
+    box-shadow: inset 0 0 5px 5px #000000;
+    background: #4e4e4e;
 }
 
 @media screen and (min-width: 320px) and (max-width: 420px) {
     .calc-page {
         background-size: 100vw 100vh;
     }
+
+    .theme {
+        width: 40px;
+        height: 40px;
+        left: 10px;
+        background-size: 30px 30px;
+        margin: 5px;
+
+    }
+    .theme:hover {
+        box-shadow: 0 0 10px 5px #cacaca;
+    }
+    
+    .dark .theme {
+        background-size: 30px 30px;
+    }
+    .dark .theme:hover {
+        box-shadow: 0 0 10px 5px #555555;
+    }
+    
     .calc {
         width: 308px;
         height: 580px;
         border-width: 5px;
         border-radius: 15px;
-        gap: 20px;
     }
     .main-display {
         width: 290px;
@@ -162,6 +269,7 @@ body {
         border-width: 3px;
         font-size: 30px;
         border-radius: 10px;
+        margin-bottom: 15px;
     }
     .operator {
         height: 24px;
@@ -210,38 +318,65 @@ body {
     .calc-page {
         background-size: 100vw 100vh;
     }
+
+    .theme {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 45px;
+        left: 60px;
+        background-size: 30px 30px;
+        margin: 5px;
+
+    }
+    .theme:hover {
+        box-shadow: 0 0 10px 5px #cacaca;
+    }
+    
+    .dark .theme {
+        background-size: 30px 30px;
+    }
+    .dark .theme:hover {
+        box-shadow: 0 0 10px 5px #555555;
+    }
+
     .calc {
         height: 308px;
         width: 720px;
         border-width: 5px;
         border-radius: 15px;
-        gap: 5px;
+        gap: 15px;
     }
     .main-display {
-        width: 650px;
+        margin-top: 20px;
+        position: relative;
+        align-self: flex-end;
+        right: 47px;
+        width: 550px;
         height: 40px;
         border-width: 3px;
         font-size: 35px;
         border-radius: 10px;
+        margin-bottom: 0;
     }
     .operator {
-        height: 24px;
+        height: 35px;
     }
     .display {
-        height: 24px;
-        width: 640px;
+        height: 35px;
+        width: 600px;
     }
     .separator {
-        height: 24px;
+        height: 35px;
     }
     .keyboard {
-        gap: 10px;
+        gap: 15px;
     }
     .but {
-        font-size: 30px;
-        width: 150px;
-        height: 35px;
-        border-radius: 10px;
+        font-size: 25px;
+        width: 140px;
+        height: 25px;
+        border-radius: 7px;
     }
     .but span {
         position: relative;
@@ -261,8 +396,56 @@ body {
     }
     .reset {
         border-width: 4px;
-        width: 148px;
-        height: 33px;
+        width: 138px;
+        height: 23px;
+    }  
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+    .calc-page {
+        background-size: 100vw 100vh;
+    }
+    
+    .calc {
+        width: 1150px;
+        height: 700px;
+        border-width: 10px;
+        border-radius: 30px;
+    }
+
+    .theme {
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+        background-size: 40px;
+    }
+    .dark .theme {
+        background-size: 40px 40px;
+    }
+
+    .main-display {
+        width: 1060px;
+        border-width: 6px;
+        border-radius: 17px;
+        margin-bottom: 15px;
+    }
+    .keyboard {
+        gap: 15px;
+    }
+    .but {
+        font-size: 65px;
+        height: 70px;
+        border-radius: 17px;
+        margin-right: 10px;
+    }
+    .but span {
+        font-size: 90px;
+        top: -20px;
+        height: 70px;
+    }
+    .reset {
+        width: 228px;
+        height: 68px;
     }
     
 }

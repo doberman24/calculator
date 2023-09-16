@@ -1,8 +1,10 @@
 const all_buts = document.querySelectorAll('.but');
 const display = document.querySelector('.display');
 const dis_operator = document.querySelector('.operator');
-
 const operations = document.querySelectorAll('.operation');
+
+const theme = document.querySelector('.theme');
+const calc_page = document.querySelector('.calc-page');
 
 // Проверка, нажималась ли точка-разделитель, чтобы нельзя было нажать
 // ее второй раз
@@ -25,6 +27,11 @@ let first_operation = '';
 
 // Проверка нажатия оператора - дальнейшие действия: ввод или подсчет
 let set_expression = false;
+
+theme.onclick = () => {
+    // console.log('push theme');
+    calc_page.classList.toggle('dark');
+}
 
 //Функция добавления ЧИСЛА и точки на на дисплей
 const num_click = (click_num_button) => {
