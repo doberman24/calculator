@@ -1,5 +1,24 @@
 # Calculator
 
-A simple calculator in js. It has adaptability. The functionality is close to a real desktop calculator. The theme change is light/dark. It is controlled using the mouse and keyboard.
+Web-based calculator implemented in JavaScript.
 
-**The application can be launched by following the link http://calc.lixit.ru.**
+## Description
+
+The application provides functionality similar to a standard desktop calculator.
+It supports:
+- basic arithmetic operations
+- keyboard and mouse input
+- light and dark theme switching
+- responsive layout for different screen sizes
+
+The project focuses on working with JavaScript logic, DOM events, and UI interactions.
+
+## Technologies
+
+- JavaScript
+- HTML
+- CSS
+
+## Website
+
+http://calc.lixit.ru
